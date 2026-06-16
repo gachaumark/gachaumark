@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nairobi Transit News Updates</title>
+    <!-- Tailwind CSS for clean, modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- jQuery Library -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        /* Hidden by default for jQuery slideToggle */
+        .extended-content {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans text-gray-800">
+
+    <div class="max-w-6xl mx-auto px-4 py-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-900 mb-2">Nairobi Transit News Hub</h1>
+            <p class="text-gray-600">Live coverage of the recent transport strike and resolutions.</p>
+        </header>
+
+        <!-- i. News Cards Container -->
+        <main class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            
+            <!-- Card 1 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 flex flex-col justify-between">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=600" alt="Matatu strike chaos" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm text-red-600 font-semibold uppercase tracking-wide">Breaking News</span>
+                        <h2 class="text-xl font-bold text-gray-900 mt-1">Strike Day 1 – Chaos as matatus stay off roads</h2>
+                        <p class="text-sm text-gray-500 mt-1 mb-4">June 1, 2026</p>
+                        <p class="text-gray-600">Commuters across major routes faced an uphill task getting to work this morning as operators grounded their vehicles unexpectedly.</p>
+                        
+                        <!-- Extended Content for jQuery -->
+                        <div class="extended-content mt-4 pt-4 border-t border-gray-100 text-gray-600 text-sm space-y-2">
+                            <p>The strike, which caught thousands by surprise, stems from disputes over newly introduced county transit levies and police harassment claims.</p>
+                            <p>Major hubs like Thika Road, Jogoo Road, and Ngong Road were completely deserted of the usual multi-colored buses, leaving only private vehicles and walking commuters.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- ii. Read More Button -->
+                <div class="px-6 pb-6">
+                    <button class="toggle-btn w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded transition duration-200">
+                        Read More
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 flex flex-col justify-between">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1570126089717-3d9904d99c53?auto=format&fit=crop&q=80&w=600" alt="Stranded commuters" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm text-orange-600 font-semibold uppercase tracking-wide">Commuter Impact</span>
+                        <h2 class="text-xl font-bold text-gray-900 mt-1">Commuter Impact – Thousands stranded across Nairobi</h2>
+                        <p class="text-sm text-gray-500 mt-1 mb-4">June 1, 2026</p>
+                        <p class="text-gray-600">With options limited, thousands of residents resorted to walking long distances, while fare prices for alternative means skyrocketed.</p>
+                        
+                        <!-- Extended Content for jQuery -->
+                        <div class="extended-content mt-4 pt-4 border-t border-gray-100 text-gray-600 text-sm space-y-2">
+                            <p>Boda-boda operators capitalised on the crisis, tripling their usual rates. A trip that normally costs KSh 100 surged to over KSh 300, forcing many to trek on foot from as far as Kasarani to the CBD.</p>
+                            <p>Employers have been urged to be lenient with late arrivals as the city's transport backbone remains crippled.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- ii. Read More Button -->
+                <div class="px-6 pb-6">
+                    <button class="toggle-btn w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded transition duration-200">
+                        Read More
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 flex flex-col justify-between">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=600" alt="Government meeting" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm text-yellow-600 font-semibold uppercase tracking-wide">Government Action</span>
+                        <h2 class="text-xl font-bold text-gray-900 mt-1">Government Response – Matatu Owners Association meets Transport CS</h2>
+                        <p class="text-sm text-gray-500 mt-1 mb-4">June 2, 2026</p>
+                        <p class="text-gray-600">The Ministry of Transport has called for an emergency stakeholder meeting to address the grievances raised by the operators.</p>
+                        
+                        <!-- Extended Content for jQuery -->
+                        <div class="extended-content mt-4 pt-4 border-t border-gray-100 text-gray-600 text-sm space-y-2">
+                            <p>The Cabinet Secretary opened the closed-door session by acknowledging the vital role the matatu sector plays in the economy while stressing that illegal blockades will not be tolerated.</p>
+                            <p>Representatives from the Matatu Owners Association (MOA) presented a 5-point memorandum demanding immediate policy reviews regarding digital compliance tracking.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- ii. Read More Button -->
+                <div class="px-6 pb-6">
+                    <button class="toggle-btn w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded transition duration-200">
+                        Read More
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 flex flex-col justify-between">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1521791136368-1a46827d0505?auto=format&fit=crop&q=80&w=600" alt="Strike resolution handshake" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm text-green-600 font-semibold uppercase tracking-wide">Resolution</span>
+                        <h2 class="text-xl font-bold text-gray-900 mt-1">Strike Resolution – Services resume after deal reached</h2>
+                        <p class="text-sm text-gray-500 mt-1 mb-4">June 2, 2026</p>
+                        <p class="text-gray-600">Good news for commuters as the national strike has officially been called off following a successful compromise between parties.</p>
+                        
+                        <!-- Extended Content for jQuery -->
+                        <div class="extended-content mt-4 pt-4 border-t border-gray-100 text-gray-600 text-sm space-y-2">
+                            <p>A joint communique confirmed that enforcement of the contentious digital levies would be suspended for 60 days to allow for broader public participation.</p>
+                            <p>Vehicles are already returning to their designated routes, and traffic flow is expected to normalize fully by tomorrow morning.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- ii. Read More Button -->
+                <div class="px-6 pb-6">
+                    <button class="toggle-btn w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded transition duration-200">
+                        Read More
+                    </button>
+                </div>
+            </div>
+
+        </main>
+
+        <hr class="border-gray-300 my-12">
+
+        <!-- ii. New Form (News Tip / Alert Signup Form) -->
+        <section class="max-w-xl mx-auto bg-white rounded-lg shadow-md p-8 border border-gray-200">
+            <h2 class="text-2xl font-bold text-gray-900 mb-2 text-center">Have a Transit Tip?</h2>
+            <p class="text-gray-600 text-sm text-center mb-6">Report transport issues, heavy traffic, or fare hikes directly to our newsroom.</p>
+            
+            <form id="newsTipForm" action="#" method="POST" class="space-y-4">
+                <div>
+                    <label for="fullName" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                    <input type="email" id="email" name="email" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label for="route" class="block text-sm font-medium text-gray-700 mb-1">Affected Route / Area</label>
+                    <input type="text" id="route" name="route" placeholder="e.g., Thika Road, CBD, Rongai" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Update / Situation Details</label>
+                    <textarea id="message" name="message" rows="4" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                </div>
+
+                <div class="flex items-center">
+                    <input type="checkbox" id="anonymous" name="anonymous" class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                    <label for="anonymous" class="ml-2 block text-sm text-gray-700">Keep my report completely anonymous</label>
+                </div>
+
+                <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2.5 px-4 rounded transition duration-200">
+                    Submit News Report
+                </button>
+            </form>
+        </section>
+    </div>
+
+    <!-- jQuery Script to handle slideToggle() -->
+    <script>
+        $(document).ready(function() {
+            $('.toggle-btn').click(function() {
+                // Find the extended content within the same card structure
+                var targetContent = $(this).closest('.bg-white').find('.extended-content');
+                
+                // slideToggle the target content
+                targetContent.slideToggle(300, function() {
+                    // Optional: Change button text based on visibility state after the animation finishes
+                    if (targetContent.is(':visible')) {
+                        $(this).closest('.bg-white').find('.toggle-btn').text('Read Less');
+                    } else {
+                        $(this).closest('.bg-white').find('.toggle-btn').text('Read More');
+                    }
+                });
+            });
+
+            // Handle Form Submission Mockup
+            $('#newsTipForm').submit(function(e) {
+                e.preventDefault();
+                alert('Thank you! Your news tip has been successfully sent to our editorial desk.');
+                this.reset();
+            });
+        });
+    </script>
+</body>
+</html>
