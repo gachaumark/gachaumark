@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rift Valley Technical College - News Portal</title>
+    <style>
+        /* Global Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* i. Header Styles */
+        header {
+            background-color: #fff;
+            padding: 15px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 3px solid #003366;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo-placeholder {
+            width: 60px;
+            height: 60px;
+            background-color: #003366;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .college-name h1 {
+            font-size: 1.5rem;
+            color: #003366;
+        }
+        .college-name p {
+            font-size: 0.85rem;
+            color: #666;
+            letter-spacing: 1px;
+        }
+
+        /* ii. Navigation Bar Styles */
+        nav {
+            background-color: #003366;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+        nav ul li a {
+            display: block;
+            padding: 15px 25px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+        nav ul li a:hover, nav ul li a.active {
+            background-color: #cc0000;
+        }
+
+        /* iii. Hero Banner Styles */
+        .hero-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+        }
+        .hero-banner h2 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ffcc00;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+        .hero-banner p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        /* iv. JavaScript Slideshow Styles */
+        .slideshow-section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .slideshow-section h3 {
+            margin-bottom: 20px;
+            color: #003366;
+            font-size: 1.8rem;
+        }
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            height: 450px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            background-color: #000;
+        }
+        .mySlides {
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+        .mySlides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* Navigation dots */
+        .dot-container {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .dot {
+            height: 12px;
+            width: 12px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+            cursor: pointer;
+        }
+        .dot.active-dot {
+            background-color: #cc0000;
+        }
+        /* Caption text */
+        .caption-text {
+            color: #fff;
+            font-size: 1rem;
+            padding: 12px 24px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            text-align: center;
+        }
+        /* Animation fade effect */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+
+        /* v. Footer Styles */
+        footer {
+            background-color: #111;
+            color: #aaa;
+            padding: 30px 5%;
+            text-align: center;
+            margin-top: 50px;
+            border-top: 4px solid #cc0000;
+        }
+        .footer-socials {
+            margin-bottom: 15px;
+        }
+        .footer-socials a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        .footer-socials a:hover {
+            color: #ffcc00;
+        }
+        footer p {
+            font-size: 0.85rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header { flex-direction: column; text-align: center; gap: 10px; }
+            nav ul { flex-direction: column; }
+            nav ul li a { padding: 10px; text-align: center; }
+            .hero-banner h2 { font-size: 1.8rem; }
+            .hero-banner p { font-size: 1rem; }
+            .slideshow-container { height: 300px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- i. Header Section -->
+    <header>
+        <div class="logo-container">
+            <!-- Simulated college logo -->
+            <div class="logo-placeholder">RVTC</div>
+            <div class="college-name">
+                <h1>Rift Valley Technical College</h1>
+                <p>KNOWLEDGE · INNOVATION · EXCELLENCE</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- ii. Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#news" class="active">News</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- iii. Hero Banner -->
+    <section class="hero-banner">
+        <h2>Transport Paralysis: Nationwide Matatu Strike Grounding Commuters</h2>
+        <p>Rising fuel costs push public transport operators to withdraw services, leaving thousands stranded and bringing major transit hubs to a standstill.</p>
+    </section>
+
+    <!-- iv. JavaScript Slideshow Section -->
+    <section class="slideshow-section">
+        <h3>Crisis Gallery</h3>
+        
+        <div class="slideshow-container">
+            <!-- Slide 1: Stranded Commuters -->
+            <div class="mySlides fade">
+                <img src="https://images.unsplash.com/photo-1506015391300-4802dc74de2e?auto=format&fit=crop&w=900&q=80" alt="Stranded Commuters Walking">
+                <div class="caption-text">Stranded commuters forced to walk long distances due to sudden withdrawal of public vehicles.</div>
+            </div>
+
+            <!-- Slide 2: Empty Transport Hub / Idle Vehicles -->
+            <div class="mySlides fade">
+                <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=900&q=80" alt="Idle Public Vehicles">
+                <div class="caption-text">Deserted transport hubs and idle fleets as operators park their matatus in protest.</div>
+            </div>
+
+            <!-- Slide 3: Protest Scenes / Traffic Snarl-ups -->
+            <div class="mySlides fade">
+                <img src="https://images.unsplash.com/photo-1494587351196-bcf5f29cbe4d?auto=format&fit=crop&w=900&q=80" alt="Protest Scenes and blockades">
+                <div class="caption-text">Heavy traffic snarl-ups and gridlocks blocking key arterial highways during demonstrations.</div>
+            </div>
+        </div>
+
+        <!-- Indicator dots -->
+        <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </section>
+
+    <!-- v. Footer Section -->
+    <footer>
+        <div class="footer-socials">
+            <!-- Used text labels for social icons to preserve plain HTML/CSS requirements without pulling heavy icon libraries -->
+            <a href="#facebook">Facebook</a> | 
+            <a href="#twitter">Twitter / X</a> | 
+            <a href="#instagram">Instagram</a> | 
+            <a href="#linkedin">LinkedIn</a>
+        </div>
+        <p>&copy; 2026 Rift Valley Technical College. All Rights Reserved. Designed for Educational Purposes.</p>
+    </footer>
+
+    <!-- JavaScript for Slideshow Functionality -->
+    <script>
+        let slideIndex = 0;
+        showSlides(); // Initialize automatic slideshow
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            
+            // Hide all slides
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            
+            slideIndex++;
+            // Loop back to start if index exceeds total slides
+            if (slideIndex > slides.length) { slideIndex = 1 }    
+            
+            // Remove active status from all dots
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active-dot", "");
+            }
+            
+            // Display current slide and activate corresponding dot
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active-dot";
+            
+            // Change image every 4 seconds
+            setTimeout(showSlides, 4000); 
+        }
+
+        // Manual slide navigation when user clicks on a specific dot
+        function currentSlide(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            
+            slideIndex = n;
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active-dot", "");
+            }
+            
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active-dot";
+        }
+    </script>
+</body>
+</html>
